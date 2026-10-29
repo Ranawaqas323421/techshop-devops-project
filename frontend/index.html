@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071326">
+  <title>TechShop — Smart Shopping, Better Life</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#" data-page="home"><span class="brand-icon">▣</span> Tech<span>Shop</span></a>
+    <nav class="main-nav">
+      <a href="#" data-page="home" class="nav-link active">Home</a>
+      <a href="#" data-page="products" class="nav-link">Products</a>
+      <a href="#" data-page="orders" class="nav-link auth-only hidden">My orders</a>
+    </nav>
+    <div class="top-actions">
+      <button class="icon-btn" id="search-toggle" aria-label="Search">⌕</button>
+      <button class="icon-btn cart-trigger" id="cart-open" aria-label="Open cart">🛒 <span id="cart-count">0</span></button>
+      <button class="user-pill" id="account-btn"><span class="avatar">W</span><span id="account-label">Sign in</span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> THE NEXT-GEN TECH STORE</div>
+        <h1>Upgrade your<br>world with <span class="gradient-text">better tech.</span></h1>
+        <p>Thoughtfully picked devices. Beautiful design. Technology that moves with you.</p>
+        <div class="hero-buttons"><button class="btn btn-primary" data-page="products">Explore products <span>↗</span></button><button class="btn btn-ghost" id="learn-more">Why TechShop?</button></div>
+        <div class="hero-proof"><div class="proof-avatars"><span>W</span><span>A</span><span>M</span></div><div><strong>4.8/5</strong><small> loved by tech people</small></div><div class="proof-divider"></div><div><strong>Free shipping</strong><small> on orders over $100</small></div></div>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="floating-tag tag-top">✦ New collection</div>
+        <div class="hero-device laptop-device"><div class="laptop-screen"><div class="screen-glow"></div><span class="screen-mark">T.</span><div class="screen-lines"></div></div><div class="laptop-base"></div></div>
+        <div class="float-product phone-product"><div class="phone-camera"></div><div class="phone-screen">T<span>+</span></div></div>
+        <div class="float-product watch-product"><div class="watch-strap"></div><div class="watch-face">10:09</div></div>
+        <div class="floating-tag tag-bottom"><span class="tag-spark">✦</span> Designed for your everyday</div>
+        <div class="art-shadow"></div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <span>BUILT FOR YOUR EVERYDAY</span><b>✦ Premium picks</b><b>↗ Fast delivery</b><b>◈ Secure checkout demo</b><b>⌁ Easy returns</b>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="section-heading"><div><div class="eyebrow">CURATED FOR YOU</div><h2>Meet your next <span class="gradient-text">favorite.</span></h2></div><button class="text-link" data-page="products">View all products <span>→</span></button></div>
+      <div class="category-row" id="categories">
+        <button class="category-chip active" data-category="All">✦ All products</button><button class="category-chip" data-category="Computers">▱ Computers</button><button class="category-chip" data-category="Phones">▣ Phones</button><button class="category-chip" data-category="Audio">♫ Audio</button><button class="category-chip" data-category="Wearables">◉ Wearables</button><button class="category-chip" data-category="Accessories">⌘ Accessories</button>
+      </div>
+      <div class="product-grid" id="product-grid"><div class="loading-card">Loading the good stuff…</div></div>
+    </section>
+
+    <section class="promo-banner" id="why">
+      <div class="promo-orb">✦</div><div><div class="eyebrow">YOUR SETUP, REIMAGINED</div><h2>Small upgrades.<br><span class="gradient-text">Big difference.</span></h2><p>From your desk to your daily commute, find the gear that makes every day feel a little more futuristic.</p></div><button class="btn btn-primary" data-page="products">Find your upgrade ↗</button>
+    </section>
+
+    <section class="section hidden" id="all-products-section"><div class="section-heading"><div><div class="eyebrow">THE FULL LINEUP</div><h2>Shop all products</h2></div><input id="search-input" class="search-input" placeholder="Search products…" /></div><div class="product-grid" id="all-product-grid"></div></section>
+    <section class="section hidden" id="orders-section"><div class="section-heading"><div><div class="eyebrow">YOUR TECH JOURNEY</div><h2>Order history</h2></div></div><div id="orders-list" class="orders-list"></div></section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-icon">▣</span> Tech<span>Shop</span></a><span>Built to learn. Designed to stand out.</span><span>© 2026 TechShop Demo</span></footer>
+
+  <div class="modal-backdrop hidden" id="auth-modal"><div class="modal glass-panel"><button class="modal-close" data-close="auth-modal">×</button><div class="modal-brand">▣ Tech<span>Shop</span></div><div class="eyebrow">WELCOME TO BETTER TECH</div><h2 id="auth-title">Good to see you.</h2><p class="muted" id="auth-subtitle">Sign in to access your account and orders.</p><form id="auth-form"><label id="name-wrap" class="hidden">Full name<input name="name" autocomplete="name" placeholder="Waqas Saleem"></label><label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label><label>Password<input name="password" type="password" autocomplete="current-password" minlength="8" required placeholder="At least 8 characters"></label><div class="form-error" id="auth-error"></div><button class="btn btn-primary full-btn" id="auth-submit">Sign in securely <span>→</span></button></form><p class="switch-auth" id="switch-auth">New here? <button type="button">Create an account</button></p><small class="fine-print">Demo project · No payment details are collected.</small></div></div>
+
+  <div class="drawer-backdrop hidden" id="cart-drawer"><aside class="cart-drawer"><div class="drawer-heading"><div><div class="eyebrow">YOUR PICKS</div><h2>Your cart <span id="drawer-count">(0)</span></h2></div><button class="modal-close" id="cart-close">×</button></div><div id="cart-items" class="cart-items"></div><div class="cart-bottom"><div class="shipping-note">✦ You're shopping smart. Checkout is a demo.</div><div class="subtotal"><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div><div class="subtotal"><span>Shipping</span><strong id="shipping-cost">$0</strong></div><div class="subtotal total"><span>Total</span><strong id="cart-total">$0</strong></div><button class="btn btn-primary full-btn" id="checkout-btn">Continue to checkout <span>→</span></button></div></aside></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
